@@ -1,0 +1,139 @@
+/* help.css */
+
+/* General container for content, re-using from your main CSS structure */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Help Hero Section */
+.help-hero {
+    background-color: #fce4ec; /* Light pink from your theme */
+    color: #4a148c; /* Dark purple from your theme */
+    text-align: center;
+    padding: 80px 20px;
+    margin-top: 60px; /* To account for fixed navbar */
+}
+
+.help-hero h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.help-hero p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 60px 0;
+    background-color: #fff; /* White background for readability */
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #4a148c; /* Dark purple */
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background-color: #f7f7f7; /* Light grey for each FAQ card */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden; /* To contain expanding answer */
+}
+
+.faq-question {
+    background-color: #e0bfe0; /* A slightly lighter purple for question header */
+    color: #4a148c; /* Dark purple text */
+    padding: 20px;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #d1a8d1; /* Darker on hover */
+}
+
+.faq-question::after {
+    content: '+'; /* Plus sign for closed state */
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    content: '-'; /* Minus sign for open state */
+    transform: rotate(0deg); /* No rotation needed, just change symbol */
+}
+
+.faq-answer {
+    padding: 0 20px;
+    background-color: #fff;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+
+.faq-answer.active {
+    max-height: 200px; /* Adjust as needed for content height */
+    padding: 20px;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+}
+
+.faq-answer p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.faq-answer a {
+    color: #880e4f; /* Accent color for links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .help-hero {
+        padding: 60px 15px;
+        margin-top: 50px;
+    }
+
+    .help-hero h1 {
+        font-size: 2.2em;
+    }
+
+    .help-hero p {
+        font-size: 1em;
+    }
+
+    .faq-section h2 {
+        font-size: 2em;
+    }
+
+    .faq-question {
+        font-size: 1em;
+        padding: 15px;
+    }
+
+   
+}
+
